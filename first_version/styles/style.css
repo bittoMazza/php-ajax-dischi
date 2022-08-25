@@ -11,3 +11,17 @@
 body{
     background-color:#1e2d3b ;
 }
+
+.card-album{
+    text-align: center;
+    padding: 20px;
+    margin: 12px 20px;
+    width: calc((100% / 5) - 40px);
+    background-color: #2e3a46; 
+}
+
+.album-title{
+    color: white;
+    padding: 20px 0;
+    text-transform: uppercase;
+}

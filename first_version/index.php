@@ -12,6 +12,9 @@
     <title>PHP Albums</title>
 </head>
 <body>
+    <?php
+        include 'database.php';
+    ?>
     <div id="app">
         <header>
             <div class="header-container">
@@ -19,18 +22,35 @@
             </div>
         </header>
         <main>
-            <div class="container">
+            <div class="container py-5">
                 <div class="row">
+                    <?php
+                        foreach($albumsInfo as $album)
+                        {
+                    ?>
                     <div class="card-album">
-                        <img class="w-100" :src="cardInfo.poster" alt="Card image cap">
-                        <h4 class="album-title" >{{ cardInfo.title }}</h4>
+                        <img class="w-100" alt="Card image cap" src="<?=$album['poster'];?>">
+                        <h4 class="album-title" >
+                            <?php
+                                echo $album['title'];
+                            ?>
+                        </h4>
                         <div class="text-muted">
                             <span class="d-block fs-4">
-                                {{cardInfo.author}}
+                                <?php
+                                    echo $album['author'];
+                                ?>
                             </span>
-                            <span>{{cardInfo.year}}</span>
+                            <span>
+                                <?php
+                                    echo $album['year'];
+                                ?>
+                            </span>
                         </div>
                     </div>
+                    <?php
+                        }
+                    ?>
                 </div>  
             </div>       
         </main>
@@ -38,12 +58,3 @@
 </body>
 </html>
 
-<div class="container py-5">
-        <!--   <div class="d-flex justify-content-around">
-                <SelectedGenre
-                :albums="albumsGenre" 
-                @selectGenre="SearchByGenre"/>
-                <SelectedArtist
-                :albums="albumsArtist"
-                @selectArtist="SearchByArtist"/> -->
-            </div>
