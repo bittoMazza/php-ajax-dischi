@@ -1,9 +1,13 @@
 .header-container{
-    background-color: red;
+    background-color: #2e3a46;
 }
 
 .spotify-icon{
     font-size:40px;
     margin-left: 30px;
     color: #1DB954;
+}
+
+body{
+    background-color:#1e2d3b ;
 }
