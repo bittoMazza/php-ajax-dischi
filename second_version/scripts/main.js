@@ -6,20 +6,29 @@ const app = new Vue({
     },
     methods :{
         getCardInfo() {
-            axios.get('http://localhost/php-ajax-dischi/controller.php')
+            axios.get('../controller.php')
               .then( (result) => {   
                     this.albumsInfo = result.data;
                     this.createGenreArray(this.albumsInfo);
-                    console.log(this.albumsGenre)
                   })                   
         },
+
         createGenreArray(albumArray){
           for(let i = 0; i < albumArray.length ; i++){
               if(!this.albumsGenre.includes(albumArray[i].genre)){
                   this.albumsGenre.push(albumArray[i].genre);
               }
           }
-      },
+        },
+
+        getGenreAlbums(genreSelected){
+          axios.get('../controller.php/?genre='+genreSelected+'')
+          .then( (result) => {   
+                this.albumsInfo = result.data;
+                this.createGenreArray(this.albumsInfo);
+                console.log(this.albumsGenre)
+              })  
+        }
      },
 
      created(){

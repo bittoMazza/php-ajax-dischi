@@ -23,7 +23,7 @@
         <main>        
             <div class="container py-5">
                 <div class="my-4">
-                    <select class="W-100 rounded" v-model="selected" name="selectType" @change="$emit('selectGenre',selected)" id="">
+                    <select class="W-100 rounded" v-model="selected" name="selectType" @change="getGenreAlbums(selected)" id="">
                         <option value="" disabled selected>SELEZIONA CHE GENERE VUOI ASCOLTARE !!</option>
                         <option value="" class="text-danger">RESET RICERCA PER GENERE</option>
                         <option v-for="genre in albumsGenre" :value='genre'> {{ genre }}</option>
