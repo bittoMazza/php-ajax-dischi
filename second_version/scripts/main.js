@@ -7,7 +7,7 @@ const app = new Vue({
         getCardInfo() {
             axios.get('http://localhost/php-ajax-dischi/second_version/controller.php')
               .then( (result) => {   
-                    this.albumsInfo = result;
+                    this.albumsInfo = result.data;
                   })                   
         },
      },
