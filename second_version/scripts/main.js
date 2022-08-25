@@ -5,10 +5,15 @@ const app = new Vue({
     },
     methods :{
         getCardInfo() {
-            axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+            axios.get('http://localhost/php-ajax-dischi/second_version/controller.php')
               .then( (result) => {   
-               
+                    this.albumsInfo = result;
                   })                   
         },
+     },
+
+     created(){
+      this.getCardInfo();
      }
+
   })
