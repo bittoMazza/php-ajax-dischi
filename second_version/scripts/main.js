@@ -3,6 +3,7 @@ const app = new Vue({
     data: {
       albumsInfo : [],
       albumsGenre: [],
+      selected : '',
     },
     methods :{
         getCardInfo() {
@@ -21,8 +22,8 @@ const app = new Vue({
           }
         },
 
-        getGenreAlbums(genreSelected){
-          axios.get('../controller.php/?genre='+genreSelected+'')
+        getGenreAlbums(){
+          axios.get('../controller.php?genre='+this.selected+'')
           .then( (result) => {   
                 this.albumsInfo = result.data;
                 this.createGenreArray(this.albumsInfo);
