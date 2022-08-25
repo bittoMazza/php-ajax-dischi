@@ -26,7 +26,7 @@ const app = new Vue({
           .then( (result) => {   
                 this.albumsInfo = result.data;
                 this.createGenreArray(this.albumsInfo);
-                console.log(this.albumsGenre)
+                console.log(this.albumsInfo)
               })  
         }
      },
